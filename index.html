@@ -39,7 +39,29 @@ var docMod = document.lastModified; // loads last modified time stamp into docMo
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 </script>
+// This is the function that finds the rectangualr canvas
+function drawRectangle() {
+    var canvas = document.getElementById("myCanvas"); // Get the canvas by its ID
+    var ctx = canvas.getContext("2d"); // Get the 2D tools for the canvas
+    ctx.fillStyle = "#FF5733"; // Pick a color (this is a bright orange-red)
+    ctx.fillRect(50, 50, 150, 75); // Draw the rectangle: (x, y, width, height)
+}
 
+// This function writes your name on the canvas!!
+function drawName() {
+    var canvas = document.getElementById("myCanvas"); // Access the canvas
+    var ctx = canvas.getContext("2d"); // Get the drawing tools
+    ctx.font = "25px Comic Sans MS"; // Choose the size and font style
+    ctx.fillStyle = "#0000FF"; // Set the text color to blue
+    ctx.fillText("Megs Ganesh", 60, 180); // Draw the text: ("Text", x, y)
+}
+
+// This function removes everythign so u coudld start over if needed
+function clearCanvas() {
+    var canvas = document.getElementById("myCanvas"); // Access the canvas
+    var ctx = canvas.getContext("2d"); // Get the drawing tools
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Wipe the entire canvas area
+}
 
 
 <style>	
