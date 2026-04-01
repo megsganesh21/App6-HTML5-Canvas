@@ -62,7 +62,21 @@ function clearCanvas() {
     var ctx = canvas.getContext("2d"); // Get the drawing tools
     ctx.clearRect(0, 0, canvas.width, canvas.height); // Wipe the entire canvas area
 }
-
+// This creates a new image
+function drawImage() {
+    var canvas = document.getElementById("myCanvas"); // Find our canvas
+    var ctx = canvas.getContext("2d"); // Get drawing tools
+    var img = new Image(); // Create a new "blank" image object
+    
+    // waits until the whole image has loaded
+    img.onload = function() {
+        // Draw the image: (imageVariable, x, y, width, height)
+        ctx.drawImage(img, 100, 50, 100, 100); 
+    };
+    
+    // how and where to get the image 
+    img.src = "https://raw.githubusercontent.com/diydiagnostics/App6-HTML5-Canvas/gh-pages/toucan.png";
+}
 
 <style>	
 .body {
